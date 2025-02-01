@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 function Head(){
     return(
         <>
-            <div className="bg-[url(./assets/pattern-bg-mobile.png)] bg-center bg-no-repeat bg-cover w-full h-1/3 flex flex-col items-center">
+            <div className="bg-[url(./assets/pattern-bg-mobile.png)] bg-center bg-no-repeat bg-cover w-full h-1/3 flex flex-col items-center z-10 relative">
                 <h1 className="text-2xl text-center text-white font-bold py-5">IP Address Tracker</h1>
                 <div className='flex'>
                     <input className="bg-white rounded-l-xl p-3 text-lg" type="text" placeholder="Search for any IP address or domain"/>
@@ -27,9 +27,6 @@ function Head(){
                         <span className="font-bold text-xl">SpaceX Starlink</span>
                     </div>
                 </div>
-            </div>
-            <div className="bg-slate-800 w-full h-full">
-
             </div>
         </>
     )
