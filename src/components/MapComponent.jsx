@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-import marker from '../assets/marker-icon-2x.png'
-import L from 'leaflet'
+import { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import marker2x from '../assets/marker-icon-2x.png';
+import iconUrl from '../assets/marker-icon.png';
+import markerShadow from '../assets/marker-shadow.png';
+import L from 'leaflet';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-    iconRetinaUrl: marker,
-    iconUrl: './src/assets/images/marker-icon.png',
-    shadowUrl: './src/assets/marker-shadow.png'
+    iconRetinaUrl: marker2x,
+    iconUrl: iconUrl,
+    shadowUrl: markerShadow
 });
 
 function ChangeView({ center, zoom }) {
