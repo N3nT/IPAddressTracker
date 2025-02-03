@@ -1,40 +1,15 @@
-import { useState } from 'react'
-
 import { ChevronRight } from 'lucide-react'
 
 
 function Head(props) {
-	const [ip, setIp] = useState('192.168.1.1')
-	const [location, setLocation] = useState('Brooklyn, NY 10001')
-	const [timeZone, setTimeZone] = useState('UTC -05:00')
-	const [isp, setIsp] = useState('SpaceX Starlink')
-
-	async function fetchData() {
-		try {
-			const response = await fetch(`https://ipapi.co/${props.ipInput}/json/`)
-			const data = await response.json()
-			console.log(data)
-			if (!data.error) {
-				setIp(data.ip)
-				setLocation(`${data.country}, ${data.region}, ${data.city}`)
-				setTimeZone(`UTC ${data.utc_offset}`)
-				props.setCords({ x: data.longitude, y: data.latitude })
-				setIsp(data.org)
-			} else{
-                setIp(data.ip)
-				setLocation(`None`)
-				setTimeZone(`None`)
-				props.setCords({ x: 0, y: 0 })
-				setIsp(data.reason)
-            }
-		} catch (error) {
-			console.error('Błąd:', error)
-		}
-	}
-
 	const handleIpInputChange = (e) => {
 		props.setIpInput(e.target.value)
 	}
+
+    const handleIpButtonClick = () => {
+        props.fetchData();
+        props.setIpInput('');
+    }
 
 	return (
 		<>
@@ -52,7 +27,7 @@ function Head(props) {
 					/>
 					<button
 						className='flex items-center justify-center rounded-r-xl bg-veryDarkGray px-3'
-						onClick={fetchData}
+						onClick={handleIpButtonClick}
 					>
 						<ChevronRight color='white' />
 					</button>
@@ -63,25 +38,25 @@ function Head(props) {
 							<span className='uppercase text-xs text-darkGrey font-bold tracking-widest'>
 								ip adress
 							</span>
-							<span className='font-bold text-xl'>{ip}</span>
+							<span className='font-bold text-xl'>{props.ip}</span>
 						</div>
 						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start'>
 							<span className='uppercase text-xs text-darkGrey font-bold tracking-widest'>
 								location
 							</span>
-							<span className='font-bold text-xl'>{location}</span>
+							<span className='font-bold text-xl'>{props.location}</span>
 						</div>
 						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start'>
 							<span className='uppercase text-xs text-darkGrey font-bold tracking-widest'>
 								timezone
 							</span>
-							<span className='font-bold text-xl'>{timeZone}</span>
+							<span className='font-bold text-xl'>{props.timeZone}</span>
 						</div>
 						<div className='flex flex-col items-center sm:items-start'>
 							<span className='uppercase text-xs text-darkGrey font-bold tracking-widest'>
 								isp
 							</span>
-							<span className='font-bold text-xl'>{isp}</span>
+							<span className='font-bold text-xl'>{props.isp}</span>
 						</div>
 					</div>
 				</div>
