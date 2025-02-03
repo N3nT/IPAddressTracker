@@ -6,9 +6,9 @@ import L from 'leaflet'
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-    iconRetinaUrl: '../node_modules/leaflet/dist/images/marker-icon-2x.png',
-    iconUrl: '../node_modules/leaflet/dist/images/marker-icon.png',
-    shadowUrl: '../node_modules/leaflet/dist/images/marker-shadow.png'
+    iconRetinaUrl: './src/assets/marker-icon-2x.png',
+    iconUrl: './src/assets/images/marker-icon.png',
+    shadowUrl: './src/assets/marker-shadow.png'
 });
 
 function ChangeView({ center, zoom }) {

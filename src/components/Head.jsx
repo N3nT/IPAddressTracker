@@ -1,6 +1,5 @@
 import { ChevronRight } from 'lucide-react'
 
-
 function Head(props) {
 	const handleIpInputChange = (e) => {
 		props.setIpInput(e.target.value)
