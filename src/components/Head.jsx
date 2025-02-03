@@ -33,25 +33,28 @@ function Head(props) {
 				</div>
 				<div className='p-5 w-full flex justify-center'>
 					<div className='bg-white py-5 rounded-xl flex flex-col items-center w-full sm:flex-row sm:justify-around sm:h-[200px] max-w-[1000px] sm:mt-8'>
-						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start'>
+						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start sm:p-5'>
 							<span className='uppercase text-xs lg:text-lg text-darkGrey font-bold tracking-widest'>
 								ip adress
 							</span>
 							<span className='font-bold text-xl lg:text-2xl'>{props.ip}</span>
 						</div>
-						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start'>
+                        <div className='bg-slate-200 w-[2px] h-3/4 hidden sm:block'></div>
+						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start sm:p-5'>
 							<span className='uppercase text-xs lg:text-lg text-darkGrey font-bold tracking-widest'>
 								location
 							</span>
-							<span className='font-bold text-xl lg:text-2xl max-w-[150px] md:max-w-none'>{props.location}</span>
+							<span className='font-bold text-xl lg:text-2xl'>{props.location}</span>
 						</div>
-						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start'>
+                        <div className='bg-slate-200 w-[2px] h-3/4 hidden sm:block'></div>
+						<div className='flex flex-col items-center justify-center mb-5 sm:mb-0 sm:items-start sm:p-5'>
 							<span className='uppercase text-xs lg:text-lg text-darkGrey font-bold tracking-widest'>
 								timezone
 							</span>
 							<span className='font-bold text-xl lg:text-2xl'>{props.timeZone}</span>
 						</div>
-						<div className='flex flex-col items-center sm:items-start'>
+                        <div className='bg-slate-200 w-[2px] h-3/4 hidden sm:block'></div>
+						<div className='flex flex-col items-center sm:items-start sm:p-5'>
 							<span className='uppercase text-xs lg:text-lg text-darkGrey font-bold tracking-widest'>
 								isp
 							</span>
